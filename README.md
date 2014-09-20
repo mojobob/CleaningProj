@@ -130,7 +130,7 @@ Samsung data set.
 #### Retain only the measurement columns that include means or standard deviations
 
 The `features.txt` file in the Samsung data includes descriptive names for the measurement columns rather than
-the numeric names (e.g., `V123`) used in the actual measurement data. We filter the descriptive column
+the numeric names (e.g., `V123`) that appear in the loaded measurement data. We filter the descriptive column
 names for those that include `-mean(` or `-std(`. 66 columns satisfy the criteria. We do not include columns 
 with names that just include `mean` as part of something else (e.g., `meanFreq` or `gravityMean`). Our reasoning is that we 
 are only interested in columns that are a direct measurement of a mean or standard deviation.
