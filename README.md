@@ -6,9 +6,11 @@ Samsung data set of phone motion sensor data.
 It represents the course project for the "Getting and Cleaning Data" course.
 
 Description of the original Samsung data:
+
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
 Location of the original Samsung data:
+
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 Once the tidy data set of selected measurements is generated, an initial analysis is done: a tidy data set of averages is
@@ -88,7 +90,7 @@ the same activity.
 
 ### How the original pieces of Samsung data fit together
 
-The Samsung data set is quite fragmented, with subject and activity ids held separate 
+The Samsung data set is quite fragmented, with subject and activity ids held separately 
 (in `subject_` and `y_` files, respectively) from the measurements (in `X_` files), 
 and the measurement files are split into `training` and `test` parts.
 
@@ -109,7 +111,7 @@ with averages over all observations of a particular subject doing a particular a
 
 #### Ensure the original Samsung data is downloaded
 
-If the `UCI HAR Dataset` directory does not exist in working directory, the zip file is downloaded and unpacked
+If the `UCI HAR Dataset` directory does not exist in the R working directory, the zip file is downloaded and unpacked
 as described previously. The data in the `UCI HAR Dataset` is not altered in any way by the script after unpacking.
 
 #### Load the individual components of the Samsung data
@@ -145,7 +147,7 @@ observation data based only on row number. The `join` function preserves the row
  
 #### Attach the subject ids and activity labels as separate columns to each observation
 
-Both the subject id and the activity label are held separate from the measurement data. The data in each row
+Both the subject id and the activity label are held separately from the measurement data. The data in each row
 of each of these frames correspond to the same observation. We concatenate the subject and activity label
 as separate columns to the measurement data to form a complete, tidy set of variables corresponding to a single
 observation.
