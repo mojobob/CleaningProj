@@ -19,9 +19,9 @@ script has been run.
 
 ### What was extracted from the Samsung data set
 
-The original Samsung data was broken into test and training subsets by randomly assigning the
+The original Samsung data was broken into test and train subsets by randomly assigning the
 30 subjects to one of the two groups. Our generated data removes this distinction and combines
-the test and training data into a single block with no differentiation between the subsets.
+the test and train data into a single block with no differentiation between the subsets.
 
 The generated data set includes only measurements from the Samsung data that are a mean or
 standard deviation. We actually filtered the columns of interest by looking for `-std(` or
@@ -84,7 +84,7 @@ derivative of the 'Body' component (as opposed to the 'Gravity' component) of ac
 time derivative of acceleration is known as 'Jerk'.
 
 
-The table below lists the columns generated data set and their basis in the `UCI HAR Dataset`.
+The table below lists the columns in the generated data set and their basis in the `UCI HAR Dataset`.
 
 | Col # | Variable | UCI HAR Dataset Source |
 | ----- | :------- | :-------- |

@@ -92,7 +92,7 @@ the same activity.
 
 The Samsung data set is quite fragmented, with subject and activity ids held separately 
 (in `subject_` and `y_` files, respectively) from the measurements (in `X_` files), 
-and the measurement files are split into `training` and `test` parts.
+and the measurement files are split into `train` and `test` parts.
 
 David Hood, in a Coursera [forum thread](https://class.coursera.org/getdata-007/forum/thread?thread_id=49) provides 
 an excellent diagram of how the data components fit together:
@@ -100,7 +100,7 @@ an excellent diagram of how the data components fit together:
 <img src="https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png">
 
 Note that although there are `Inertial Signals` directories with additional measurements contained with both
-the test and training data, we do not include them in processing because these directories do not contain any
+the test and train data, we do not include them in processing because these directories do not contain any
 mean or standard deviation measurements of interest for the data set we are producing. They can safely be ignored.
 
 ### Description of the processing steps
@@ -119,11 +119,11 @@ as described previously. The data in the `UCI HAR Dataset` is not altered in any
 Each interesting component of the Samsung data set (as shown in David Hood's diagram) is loaded into R as a
 separate data frame.
 
-#### Merge test and training observations
+#### Merge test and train observations
 
-The test and training observations are then merged into a single block of observation. The blocks of test and training rows are simply 
-concatenated. That is, every test and training observation appears as a separate row in the new merged data frame.
-The test and training lists of subjects and activities need to be merged in exactly the same way so that the 
+The test and train observations are then merged into a single block of observation. The blocks of test and train rows are simply 
+concatenated. That is, every test and train observation appears as a separate row in the new merged data frame.
+The test and train lists of subjects and activities need to be merged in exactly the same way so that the 
 subject and activity associated with each observation is still in the correct position. Row order is used extensively in the 
 Samsung data set.
 
@@ -141,7 +141,7 @@ columns. This is done through simple column selection. The number and order of o
 #### Convert the list of activity ids into a list of activity labels
 
 The numeric activity ids have descriptive counterparts (e.g., 1 maps to `WALKING`). We convert the activity ids contained
-in the merged `y_` files into the descriptive labels contained in the `activity_label.txt` using the `join` function
+in the merged `y_` files into the descriptive labels contained in the `activity_labels.txt` using the `join` function
 from the R plyr package. We need to use this funcion because the list of activity ids correlates with the actual
 observation data based only on row number. The `join` function preserves the row order during the merge.
  
