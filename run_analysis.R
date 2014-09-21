@@ -75,6 +75,7 @@ featureDescs <- sub("-mean\\(\\)", "Mean", featureDescs)
 featureDescs <- sub("-std\\(\\)", "StdDev", featureDescs)
 featureDescs <- sub("^f", "freq", featureDescs)
 featureDescs <- sub("^t", "time", featureDescs)
+featureDescs <- sub("BodyBody", "Body", featureDescs)
 featureDescs <- sub("-", "", featureDescs)
 
 # Install the more descriptive column names (including names for the two added columns)
